@@ -2284,23 +2284,35 @@
         }
 
         .search-bar-row {
-          display: grid;
-          grid-template-columns: minmax(0, 1fr) 48px;
-          gap: 16px 22px;
-          align-items: center;
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 16px;
         }
 
         .search-bar {
-          grid-column: 1;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
           flex: none;
           width: 100%;
         }
 
+        .search-bar input {
+          flex: 1 1 auto;
+          min-width: 0;
+          width: auto;
+        }
+
         .toggle-view-btn {
-          grid-column: 2;
+          position: static;
+          flex: 0 0 48px;
           width: 48px;
           height: 48px;
           margin: 0;
+          align-self: center;
         }
 
         .filter-inline {
@@ -2398,23 +2410,38 @@
           display: flex !important;
           flex-wrap: wrap;
           justify-content: flex-start;
-          gap: 10px 12px;
+          gap: 8px 10px;
           width: 100%;
         }
 
         .filter-field {
-          flex: 1 1 220px;
-          gap: 8px;
+          flex: 1 1 100%;
+          gap: 6px;
+          min-width: 0;
         }
 
         .filter-inline label {
           flex: 0 0 auto;
           min-width: auto;
+          font-size: 11px;
+          font-weight: 500;
         }
 
         .filter-inline select {
-          flex: 1 1 120px;
+          flex: 1 1 auto;
           min-width: 0;
+          height: 32px;
+          padding: 0 28px 0 10px;
+          font-size: 10px;
+          line-height: 32px;
+          background:
+            linear-gradient(45deg, transparent 50%, var(--figma-soft-text) 50%) right 14px center / 5px 5px no-repeat,
+            linear-gradient(135deg, var(--figma-soft-text) 50%, transparent 50%) right 10px center / 5px 5px no-repeat,
+            #000000;
+        }
+
+        .filter-inline select:focus {
+          box-shadow: 0 0 0 2px rgba(235, 244, 0, 0.18);
         }
 
         .grid {
@@ -2427,22 +2454,62 @@
           box-shadow: none;
         }
 
-        .game-info {
-          padding: 14px 10px;
+        .grid .game:not(.list-item) .game-info {
+          gap: 6px;
+          padding: 10px 8px 12px;
         }
 
-        .game-info h3 {
-          min-height: 40px;
-          max-height: 40px;
+        .grid .game:not(.list-item) .game-info h3 {
+          min-height: 32px;
+          max-height: 32px;
           margin-bottom: 0;
-          font-size: 14px;
+          font-size: 11px;
+          line-height: 14px;
+          letter-spacing: 0;
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          line-clamp: 2;
+          -webkit-box-orient: vertical;
         }
 
-        .download-btn {
-          padding: 0 11px;
+        .grid .game:not(.list-item) .platform-chip {
+          font-size: 9px;
+          line-height: 12px;
+          letter-spacing: 0;
+          max-width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
+        .grid .game:not(.list-item) .card-actions {
+          gap: 6px;
+          width: 100%;
+          max-width: 100%;
+          padding: 0 2px;
+          box-sizing: border-box;
+        }
+
+        .grid .game:not(.list-item) .download-btn,
+        .grid .game:not(.list-item) .game:hover .download-btn {
+          width: 100%;
+          max-width: 100%;
+          min-width: 0;
+          height: 28px;
+          padding: 0 8px;
           border: 1px solid var(--color-accent);
           border-radius: 999px;
-          font-size: 14px;
+          font-size: 10px;
+          line-height: 14px;
+          letter-spacing: 0;
+          box-sizing: border-box;
+        }
+
+        .grid .game:not(.list-item) .popular-badge,
+        .grid .game:not(.list-item) .downloaded-badge {
+          font-size: 8px;
+          padding: 2px 6px;
         }
 
         .game img {
@@ -2483,7 +2550,31 @@
 
       @media (max-width: 460px) {
         .grid {
-          grid-template-columns: 1fr;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 10px;
+        }
+
+        .grid .game:not(.list-item) .game-info {
+          padding: 8px 6px 10px;
+        }
+
+        .grid .game:not(.list-item) .game-info h3 {
+          min-height: 28px;
+          max-height: 28px;
+          font-size: 10px;
+          line-height: 13px;
+        }
+
+        .grid .game:not(.list-item) .platform-chip {
+          font-size: 8px;
+          line-height: 11px;
+        }
+
+        .grid .game:not(.list-item) .download-btn,
+        .grid .game:not(.list-item) .game:hover .download-btn {
+          height: 26px;
+          padding: 0 6px;
+          font-size: 9px;
         }
 
         .container {
@@ -2502,10 +2593,26 @@
           display: grid !important;
           grid-template-columns: auto minmax(0, 1fr);
           align-items: center;
+          gap: 6px 8px;
         }
 
         .filter-field {
           display: contents;
+        }
+
+        .filter-inline label {
+          font-size: 10px;
+        }
+
+        .filter-inline select {
+          height: 28px;
+          padding: 0 24px 0 8px;
+          font-size: 9px;
+          line-height: 28px;
+          background:
+            linear-gradient(45deg, transparent 50%, var(--figma-soft-text) 50%) right 12px center / 4px 4px no-repeat,
+            linear-gradient(135deg, var(--figma-soft-text) 50%, transparent 50%) right 9px center / 4px 4px no-repeat,
+            #000000;
         }
       }
     </style>
