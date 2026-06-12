@@ -247,18 +247,63 @@ function getUniqueValues(games, field) {
   return [...new Set(games.map((game) => game[field]).filter(Boolean))];
 }
 
-// Populate filter dropdowns
+// Populate filter dropdowns and platform pills
 function populateFilters(games) {
   const platformFilter = document.getElementById("platform-filter");
   const regionFilter = document.getElementById("region-filter");
-  // Populate platform
+
+  // Populate platform select (hidden, used by filterGames())
   const platforms = getUniqueValues(games, "platform");
   platformFilter.innerHTML =
     '<option value="">All</option>' + platforms.map((p) => `<option value="${p}">${p}</option>`).join("");
-  // Populate region
+
+  // Populate region select
   const regions = getUniqueValues(games, "region");
   regionFilter.innerHTML =
     '<option value="">All</option>' + regions.map((r) => `<option value="${r}">${r}</option>`).join("");
+
+  // Build platform filter pills
+  const pillsContainer = document.getElementById("filter-pills");
+  if (pillsContainer) {
+    // Shorten common platform names for pill labels
+    const shortName = (p) => {
+      if (!p) return p;
+      if (p.toLowerCase().includes("game boy advance") || p.toLowerCase().includes("gba")) return "GBA";
+      if (p.toLowerCase().includes("game boy color") || p.toLowerCase().includes("gbc")) return "GBC";
+      if (p.toLowerCase().includes("game boy") && !p.toLowerCase().includes("advance") && !p.toLowerCase().includes("color")) return "GB";
+      if (p.toLowerCase().includes("nintendo ds") || p.toLowerCase().includes("nds")) return "NDS";
+      if (p.toLowerCase().includes("snes") || p.toLowerCase().includes("super nintendo")) return "SNES";
+      if (p.toLowerCase().includes("nes") || p.toLowerCase().includes("famicom")) return "NES";
+      if (p.toLowerCase().includes("playstation") && p.includes("2")) return "PS2";
+      if (p.toLowerCase().includes("playstation") && p.includes("3")) return "PS3";
+      if (p.toLowerCase().includes("playstation")) return "PS1";
+      if (p.toLowerCase().includes("n64") || p.toLowerCase().includes("nintendo 64")) return "N64";
+      if (p.toLowerCase().includes("arcade") || p.toLowerCase().includes("mame")) return "ARCADE";
+      // Fallback: abbreviate to first word, max 6 chars
+      const first = p.split(/[\s\-\/]/)[0];
+      return first.length <= 6 ? first.toUpperCase() : first.slice(0, 5).toUpperCase();
+    };
+
+    const pillsHTML =
+      `<button class="filter-pill active" onclick="filterByPlatformPill(this, '')">ALL</button>` +
+      platforms.map((p) => `<button class="filter-pill" onclick="filterByPlatformPill(this, '${p.replace(/'/g, "\\'")}')">${shortName(p)}</button>`).join("");
+    pillsContainer.innerHTML = pillsHTML;
+  }
+}
+
+// Filter by clicking a platform pill
+function filterByPlatformPill(btn, platform) {
+  // Update active pill
+  const pills = document.querySelectorAll(".filter-pill");
+  pills.forEach((p) => p.classList.remove("active"));
+  btn.classList.add("active");
+
+  // Update the hidden select and run filter
+  const platformFilter = document.getElementById("platform-filter");
+  if (platformFilter) {
+    platformFilter.value = platform;
+  }
+  filterGames();
 }
 
 // Load JSON data from file with retry mechanism
@@ -471,7 +516,7 @@ function displayGames(games) {
   gameList.innerHTML = "";
   if (games.length === 0) {
     gameList.innerHTML =
-      '<div style="grid-column: 1/-1; text-align: center; color: #f357a8; font-size: 1.2em;">No games found.</div>';
+      '<div class="empty-state">No games match your search or filters.</div>';
     document.getElementById("pagination").innerHTML = "";
     return;
   }
@@ -488,7 +533,7 @@ function displayGames(games) {
     const downloadedClass = isDownloaded ? "downloaded" : "";
     const downloadText = isDownloaded ? "Downloaded" : "Download";
 
-    const popularBadge = isPopularGame(game.title) ? '<div class="popular-badge">🔥 Popular</div>' : "";
+    const popularBadge = isPopularGame(game.title) ? '<div class="popular-badge">Popular</div>' : "";
     const downloadedBadge = isDownloaded ? '<div class="downloaded-badge">Downloaded</div>' : "";
 
     gameItem.innerHTML = isListView

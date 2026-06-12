@@ -6,7 +6,7 @@
     <title>Game Downloads</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
@@ -190,7 +190,9 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--color-bg);
+        background:
+          radial-gradient(ellipse at top left, rgba(168, 85, 247, 0.18) 0%, transparent 50%),
+          #0a0812;
         display: flex !important;
         align-items: center;
         justify-content: center;
@@ -214,26 +216,30 @@
         gap: 20px;
       }
       .loading-text {
-        color: var(--color-accent);
-        font-size: 1.2em;
+        color: #c4b0e8;
+        font-size: 1em;
         text-align: center;
         margin-top: 10px;
+        font-family: "Tomorrow", sans-serif;
+        letter-spacing: 0.5px;
       }
       .reload-btn {
-        background: linear-gradient(135deg, var(--color-accent), var(--color-accent2));
-        color: var(--color-btn-text);
+        background: linear-gradient(135deg, #a855f7, #ec4899);
+        color: #ffffff;
         border: none;
         padding: 12px 24px;
-        border-radius: 8px;
+        border-radius: 999px;
         font-size: 0.9em;
         cursor: pointer;
         transition: all 0.2s ease;
-        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
-        font-family: inherit;
+        box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+        font-family: "Tomorrow", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.3px;
       }
       .reload-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 212, 255, 0.4);
+        box-shadow: 0 6px 28px rgba(168, 85, 247, 0.55);
       }
       .reload-btn:active {
         transform: translateY(0);
@@ -292,9 +298,10 @@
       .pixel-spinner div {
         width: 14px;
         height: 14px;
-        background: var(--color-accent);
+        background: #a855f7;
         opacity: 0.7;
         animation: pixel-blink 1.2s infinite;
+        border-radius: 2px;
       }
       .pixel-spinner div:nth-child(1) {
         animation-delay: 0s;
@@ -1739,30 +1746,37 @@
         box-shadow: 0 2px 0 var(--color-accent);
       }
 
-      /* Figma-inspired web theme overrides */
+      /* ═══════════════════════════════════════════════
+         GBA RETRO WARM PARCHMENT THEME
+         ═══════════════════════════════════════════════ */
       :root {
-        --color-bg: #080808;
-        --color-bg-secondary: #212121;
-        --color-text: #ffffff;
-        --color-accent: #ebf400;
-        --color-accent2: #fde101;
-        --color-card: #000000;
-        --color-card-hover: #121212;
-        --color-btn: #ebf400;
-        --color-btn-hover: #fde101;
-        --color-btn-text: #191919;
-        --color-btn-text-hover: #191919;
-        --color-btn-glow: #ebf400;
-        --figma-muted: #383b40;
-        --figma-border: #212121;
-        --figma-soft-text: #f2f2f2;
+        --color-bg: #f0dab8;
+        --color-bg-secondary: #e8cfa0;
+        --color-text: #2a1005;
+        --color-accent: #3d1208;
+        --color-accent2: #8b4513;
+        --color-card: #fdf5e6;
+        --color-card-hover: #f8edd8;
+        --color-btn: #3d1208;
+        --color-btn-hover: #5c1a10;
+        --color-btn-text: #ffffff;
+        --color-btn-text-hover: #ffffff;
+        --color-btn-glow: rgba(61, 18, 8, 0.35);
+        --figma-muted: #a07050;
+        --figma-border: #c8a068;
+        --figma-soft-text: #6b4c36;
+        --figma-gradient: linear-gradient(180deg, #3d1208 0%, #5c1a10 100%);
+        --retro-search-bg: #f5e8d0;
+        --retro-pill-inactive: rgba(61, 18, 8, 0.08);
+        --retro-shadow: 0 4px 16px rgba(61, 18, 8, 0.12);
       }
 
       body {
         min-height: 100vh;
         background:
-          radial-gradient(circle at top left, rgba(235, 244, 0, 0.12), transparent 34rem),
-          linear-gradient(180deg, #121212 0%, var(--color-bg) 32rem) !important;
+          radial-gradient(ellipse at top left, rgba(168, 85, 247, 0.18) 0%, transparent 50%),
+          radial-gradient(ellipse at bottom right, rgba(236, 72, 153, 0.12) 0%, transparent 45%),
+          linear-gradient(180deg, #130d22 0%, var(--color-bg) 30rem) !important;
         color: var(--color-text);
         font-family: "Tomorrow", "Roboto", Arial, sans-serif;
         margin: 0;
@@ -1774,20 +1788,20 @@
       }
 
       body::before {
-        opacity: 0.24;
+        opacity: 0.18;
         background-image:
           linear-gradient(
             0deg,
             transparent 24%,
-            rgba(235, 244, 0, 0.035) 25%,
-            rgba(235, 244, 0, 0.035) 26%,
+            rgba(168, 85, 247, 0.04) 25%,
+            rgba(168, 85, 247, 0.04) 26%,
             transparent 27%
           ),
           linear-gradient(
             90deg,
             transparent 24%,
-            rgba(235, 244, 0, 0.035) 25%,
-            rgba(235, 244, 0, 0.035) 26%,
+            rgba(168, 85, 247, 0.04) 25%,
+            rgba(168, 85, 247, 0.04) 26%,
             transparent 27%
           ) !important;
         background-size: 72px 72px !important;
@@ -1804,9 +1818,9 @@
         display: block;
         margin: 0 0 22px;
         padding: 28px;
-        border: 1px solid rgba(235, 244, 0, 0.16);
+        border: 1px solid rgba(168, 85, 247, 0.2);
         border-radius: 24px;
-        background: linear-gradient(135deg, rgba(33, 33, 33, 0.96), rgba(8, 8, 8, 0.9)), var(--color-bg-secondary);
+        background: linear-gradient(135deg, rgba(26, 18, 40, 0.96), rgba(10, 8, 18, 0.92));
         box-shadow: 0 22px 80px rgba(0, 0, 0, 0.36);
       }
 
@@ -1818,7 +1832,7 @@
         font-weight: 800;
         line-height: 0.95;
         letter-spacing: -1.5px;
-        text-shadow: 5px 5px 0 #191919;
+        text-shadow: 0 0 40px rgba(168, 85, 247, 0.5), 4px 4px 0 #0a0812;
       }
 
       .app-title::after {
@@ -1840,13 +1854,15 @@
         display: block;
         margin: 0 0 32px;
         padding: 18px;
-        border: 1px solid rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(168, 85, 247, 0.2);
         border-radius: 20px;
-        background: rgba(8, 8, 8, 0.86);
+        background: rgba(10, 8, 18, 0.88);
         background-image: none;
-        box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
-        backdrop-filter: blur(16px);
-        -webkit-backdrop-filter: blur(16px);
+        box-shadow:
+          0 18px 60px rgba(0, 0, 0, 0.32),
+          0 0 40px rgba(168, 85, 247, 0.05);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
       }
 
       .sticky-search > div:first-child {
@@ -1874,10 +1890,10 @@
         z-index: 1;
         width: 15px;
         height: 15px;
-        border: 2px solid var(--color-accent);
+        border: 2px solid #a855f7;
         border-radius: 50%;
         transform: translateY(-50%);
-        opacity: 0.9;
+        opacity: 0.85;
       }
 
       .search-bar::after {
@@ -1889,9 +1905,9 @@
         width: 8px;
         height: 2px;
         border-radius: 999px;
-        background: var(--color-accent);
+        background: #a855f7;
         transform: rotate(-45deg);
-        opacity: 0.9;
+        opacity: 0.85;
       }
 
       .search-bar-row .search-bar::after {
@@ -1901,10 +1917,10 @@
       .search-bar input {
         height: 56px;
         padding: 0 18px 0 54px;
-        border: 1px solid var(--figma-border);
+        border: 1px solid rgba(168, 85, 247, 0.25);
         border-radius: 16px;
-        background: #000000;
-        box-shadow: none;
+        background: rgba(17, 13, 30, 0.9);
+        box-shadow: inset 0 1px 0 rgba(168, 85, 247, 0.05);
         color: #ffffff;
         font-family: "Tomorrow", sans-serif;
         font-size: 16px;
@@ -1915,7 +1931,7 @@
 
       .search-bar input:focus {
         border-color: var(--color-accent);
-        box-shadow: 0 0 0 3px rgba(235, 244, 0, 0.18);
+        box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.22);
         transform: none;
       }
 
@@ -1935,9 +1951,9 @@
         height: 44px;
         margin: 0 0 0 10px;
         padding: 0;
-        border: 1px solid rgba(235, 244, 0, 0.5);
+        border: 1px solid rgba(168, 85, 247, 0.5);
         border-radius: 12px;
-        background: #000000;
+        background: rgba(168, 85, 247, 0.08);
         box-shadow: none;
         align-self: center;
         justify-self: flex-end;
@@ -1948,8 +1964,8 @@
 
       @media (hover: hover) and (pointer: fine) {
         .toggle-view-btn:hover {
-          border-color: rgba(235, 244, 0, 0.8);
-          background: rgba(235, 244, 0, 0.08);
+          border-color: rgba(168, 85, 247, 0.8);
+          background: rgba(168, 85, 247, 0.18);
         }
       }
 
@@ -1967,7 +1983,7 @@
       }
 
       .toggle-view-btn svg rect {
-        fill: var(--color-accent);
+        fill: #a855f7;
         stroke: var(--color-bg);
       }
 
@@ -1997,12 +2013,12 @@
         min-width: 132px;
         height: 42px;
         padding: 0 42px 0 16px;
-        border: 1px solid var(--figma-border);
+        border: 1px solid rgba(168, 85, 247, 0.3);
         border-radius: 999px;
         background:
-          linear-gradient(45deg, transparent 50%, var(--figma-soft-text) 50%) right 20px center / 6px 6px no-repeat,
-          linear-gradient(135deg, var(--figma-soft-text) 50%, transparent 50%) right 14px center / 6px 6px no-repeat,
-          #000000;
+          linear-gradient(45deg, transparent 50%, #c4b0e8 50%) right 20px center / 6px 6px no-repeat,
+          linear-gradient(135deg, #c4b0e8 50%, transparent 50%) right 14px center / 6px 6px no-repeat,
+          rgba(17, 13, 30, 0.9);
         color: var(--figma-soft-text);
         box-shadow: none;
         font-family: "Tomorrow", sans-serif;
@@ -2014,12 +2030,12 @@
 
       .filter-inline select:focus {
         border-color: var(--color-accent);
-        box-shadow: 0 0 0 3px rgba(235, 244, 0, 0.18);
+        box-shadow: 0 0 0 3px rgba(168, 85, 247, 0.22);
         outline: none;
       }
 
       .filter-inline option {
-        background: #111111;
+        background: #1a1228;
         color: #ffffff;
       }
 
@@ -2034,15 +2050,16 @@
         height: auto;
         overflow: hidden;
         box-sizing: border-box;
-        border: 1px solid var(--figma-border);
+        border: 1px solid rgba(168, 85, 247, 0.15);
         border-radius: 18px;
         background: var(--color-card);
-        box-shadow: none;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
         transition:
           transform 0.18s ease,
           border-color 0.18s ease,
           border-width 0.18s ease,
           background 0.18s ease,
+          box-shadow 0.18s ease,
           margin 0.18s ease;
       }
 
@@ -2050,18 +2067,22 @@
         .game:hover,
         .game:focus {
           background: var(--color-card-hover);
-          border: 3px solid var(--color-accent);
-          margin: -2px;
-          box-shadow: 0 18px 40px rgba(0, 0, 0, 0.32);
-          transform: translateY(4px);
+          border: 2px solid rgba(168, 85, 247, 0.7);
+          margin: -1px;
+          box-shadow:
+            0 18px 40px rgba(0, 0, 0, 0.4),
+            0 0 24px rgba(168, 85, 247, 0.15);
+          transform: translateY(-4px);
         }
 
         .game.list-item:hover,
         .game.list-item:focus {
-          border: 3px solid var(--color-accent);
-          margin: -2px;
-          box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38);
-          transform: translateY(-6px);
+          border: 2px solid rgba(168, 85, 247, 0.7);
+          margin: -1px;
+          box-shadow:
+            0 14px 36px rgba(0, 0, 0, 0.4),
+            0 0 20px rgba(168, 85, 247, 0.15);
+          transform: translateY(-4px);
           z-index: 2;
         }
       }
@@ -2071,8 +2092,7 @@
         max-height: none;
         aspect-ratio: 1 / 1;
         border: 0;
-        /* border-radius: 18px; */
-        background: #212121;
+        background: #1a1228;
         image-rendering: auto;
         object-fit: cover;
       }
@@ -2082,8 +2102,9 @@
         flex-direction: column;
         align-items: center;
         gap: 8px;
-        padding: 16px 12px;
+        padding: 14px 12px 16px;
         text-align: center;
+        background: linear-gradient(180deg, transparent 0%, rgba(168, 85, 247, 0.04) 100%);
       }
 
       .game-info h3 {
@@ -2092,8 +2113,8 @@
         margin: 0;
         color: #ffffff;
         font-family: "Tomorrow", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
+        font-size: 13px;
+        font-weight: 600;
         letter-spacing: 0.1px;
         line-height: 20px;
         text-shadow: none;
@@ -2105,7 +2126,8 @@
         color: var(--figma-soft-text);
         font-family: "Tomorrow", sans-serif;
         font-size: 11px;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.4px;
+        opacity: 0.8;
       }
 
       .card-actions {
@@ -2119,12 +2141,17 @@
       }
 
       .platform-chip {
-        color: var(--figma-soft-text);
+        display: inline-block;
+        padding: 2px 10px;
+        border-radius: 999px;
+        background: rgba(168, 85, 247, 0.18);
+        border: 1px solid rgba(168, 85, 247, 0.3);
+        color: #c4b0e8;
         font-family: "Tomorrow", sans-serif;
-        font-size: 11px;
+        font-size: 10px;
         font-weight: 500;
         letter-spacing: 0.5px;
-        line-height: 16px;
+        line-height: 18px;
         white-space: nowrap;
         order: 1;
       }
@@ -2134,25 +2161,26 @@
         order: 2;
         width: 100%;
         max-width: 160px;
-        height: 34px;
-        gap: 4px;
-        padding: 0 11px;
-        border: 1px solid var(--color-accent);
+        height: 36px;
+        gap: 6px;
+        padding: 0 14px;
+        border: none;
         border-radius: 999px;
-        background: transparent;
-        box-shadow: none;
-        color: var(--color-accent);
+        background: var(--figma-gradient);
+        box-shadow: 0 4px 20px rgba(168, 85, 247, 0.4);
+        color: #ffffff;
         font-family: "Tomorrow", sans-serif;
-        font-size: 14px;
-        font-weight: 500;
-        letter-spacing: 0.1px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
         line-height: 20px;
-        text-transform: none;
+        text-transform: uppercase;
         transform: none;
         margin-top: 4px;
         transition:
           background 0.18s ease,
-          color 0.18s ease;
+          box-shadow 0.18s ease,
+          transform 0.18s ease;
       }
 
       .download-btn::after {
@@ -2165,30 +2193,40 @@
 
       .download-btn:hover,
       .game:hover .download-btn:hover {
-        background: var(--color-accent);
-        color: var(--color-btn-text);
-        box-shadow: none;
-        transform: none;
+        background: linear-gradient(135deg, #ec4899, #a855f7);
+        box-shadow: 0 6px 28px rgba(236, 72, 153, 0.5);
+        transform: translateY(-1px);
+        color: #ffffff;
       }
 
       .download-btn.downloaded {
-        border-color: #1aff7a;
-        background: transparent;
-        color: #1aff7a;
-        box-shadow: none;
+        border: none;
+        background: linear-gradient(135deg, #10b981, #34d399);
+        color: #ffffff;
+        box-shadow: 0 4px 16px rgba(16, 185, 129, 0.4);
+      }
+
+      .download-btn.downloaded:hover {
+        background: linear-gradient(135deg, #34d399, #10b981);
+        box-shadow: 0 6px 22px rgba(16, 185, 129, 0.5);
       }
 
       .popular-badge,
       .downloaded-badge {
         border: 0;
         border-radius: 999px;
-        background: var(--color-accent);
-        box-shadow: none;
-        color: #191919;
+        background: var(--figma-gradient);
+        box-shadow: 0 2px 10px rgba(168, 85, 247, 0.4);
+        color: #ffffff;
         font-family: "Tomorrow", sans-serif;
         font-size: 10px;
-        letter-spacing: 0;
+        letter-spacing: 0.2px;
         animation: none;
+      }
+
+      .downloaded-badge {
+        background: linear-gradient(135deg, #10b981, #34d399);
+        box-shadow: 0 2px 10px rgba(16, 185, 129, 0.4);
       }
 
       .pagination-bar {
@@ -2196,20 +2234,24 @@
       }
 
       .pagination-btn {
-        border: 1px solid var(--figma-border);
+        border: 1px solid rgba(168, 85, 247, 0.25);
         border-radius: 999px;
-        background: #000000;
+        background: rgba(17, 13, 30, 0.8);
         box-shadow: none;
         color: var(--figma-soft-text);
         font-family: "Tomorrow", sans-serif;
+        transition:
+          background 0.18s ease,
+          border-color 0.18s ease,
+          box-shadow 0.18s ease;
       }
 
       .pagination-btn.active,
       .pagination-btn:hover {
         border-color: var(--color-accent);
-        background: var(--color-accent);
-        box-shadow: none;
-        color: #191919;
+        background: var(--figma-gradient);
+        box-shadow: 0 4px 16px rgba(168, 85, 247, 0.35);
+        color: #ffffff;
       }
 
       .game.list-item {
@@ -2337,8 +2379,8 @@
       @media (max-width: 760px) {
         body {
           background:
-            radial-gradient(circle at top left, rgba(235, 244, 0, 0.1), transparent 18rem),
-            linear-gradient(180deg, #111111 0%, var(--color-bg) 22rem) !important;
+            radial-gradient(ellipse at top left, rgba(168, 85, 247, 0.14) 0%, transparent 30rem),
+            linear-gradient(180deg, #130d22 0%, var(--color-bg) 22rem) !important;
         }
 
         .container {
@@ -2435,13 +2477,13 @@
           font-size: 10px;
           line-height: 32px;
           background:
-            linear-gradient(45deg, transparent 50%, var(--figma-soft-text) 50%) right 14px center / 5px 5px no-repeat,
-            linear-gradient(135deg, var(--figma-soft-text) 50%, transparent 50%) right 10px center / 5px 5px no-repeat,
-            #000000;
+            linear-gradient(45deg, transparent 50%, #c4b0e8 50%) right 14px center / 5px 5px no-repeat,
+            linear-gradient(135deg, #c4b0e8 50%, transparent 50%) right 10px center / 5px 5px no-repeat,
+            rgba(17, 13, 30, 0.9);
         }
 
         .filter-inline select:focus {
-          box-shadow: 0 0 0 2px rgba(235, 244, 0, 0.18);
+          box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.22);
         }
 
         .grid {
@@ -2450,8 +2492,8 @@
         }
 
         .game {
-          border: 1px solid var(--figma-border);
-          box-shadow: none;
+          border: 1px solid rgba(168, 85, 247, 0.12);
+          box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
         }
 
         .grid .game:not(.list-item) .game-info {
@@ -2487,8 +2529,9 @@
           gap: 6px;
           width: 100%;
           max-width: 100%;
-          padding: 0 2px;
+          padding: 0;
           box-sizing: border-box;
+          align-items: center;
         }
 
         .grid .game:not(.list-item) .download-btn,
@@ -2498,12 +2541,19 @@
           min-width: 0;
           height: 28px;
           padding: 0 8px;
-          border: 1px solid var(--color-accent);
+          border: none;
+          background: var(--color-accent);
           border-radius: 999px;
           font-size: 10px;
-          line-height: 14px;
+          line-height: 1;
           letter-spacing: 0;
           box-sizing: border-box;
+          color: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-left: auto;
+          margin-right: auto;
         }
 
         .grid .game:not(.list-item) .popular-badge,
@@ -2555,7 +2605,9 @@
         }
 
         .grid .game:not(.list-item) .game-info {
-          padding: 8px 6px 10px;
+          padding: 8px 8px 10px;
+          align-items: center;
+          text-align: center;
         }
 
         .grid .game:not(.list-item) .game-info h3 {
@@ -2610,10 +2662,862 @@
           font-size: 9px;
           line-height: 28px;
           background:
-            linear-gradient(45deg, transparent 50%, var(--figma-soft-text) 50%) right 12px center / 4px 4px no-repeat,
-            linear-gradient(135deg, var(--figma-soft-text) 50%, transparent 50%) right 9px center / 4px 4px no-repeat,
-            #000000;
+            linear-gradient(45deg, transparent 50%, #c4b0e8 50%) right 12px center / 4px 4px no-repeat,
+            linear-gradient(135deg, #c4b0e8 50%, transparent 50%) right 9px center / 4px 4px no-repeat,
+            rgba(17, 13, 30, 0.9);
         }
+      }
+    </style>
+
+    <!-- ═══════════════════════════════════════════════
+         RETRO WARM PARCHMENT THEME  — final overrides
+         ═══════════════════════════════════════════════ -->
+    <style>
+      /* ── Root variables ── */
+      :root {
+        --color-bg: #f0dab8 !important;
+        --color-bg-secondary: #e8cfa0 !important;
+        --color-text: #2a1005 !important;
+        --color-accent: #3d1208 !important;
+        --color-accent2: #8b4513 !important;
+        --color-card: #fdf5e6 !important;
+        --color-card-hover: #f8edd8 !important;
+        --color-btn: #3d1208 !important;
+        --color-btn-hover: #5c1a10 !important;
+        --color-btn-text: #ffffff !important;
+        --figma-muted: #9a6640 !important;
+        --figma-border: #c8a068 !important;
+        --figma-soft-text: #6b4c36 !important;
+        --figma-gradient: linear-gradient(180deg,#3d1208,#5c1a10) !important;
+        --retro-search-bg: #f5e8d0;
+        --radius-sm: 12px;
+        --radius-md: 16px;
+        --radius-pill: 999px;
+        --shadow-soft: 0 4px 24px rgba(61, 18, 8, 0.08);
+        --shadow-card: 0 4px 16px rgba(61, 18, 8, 0.1);
+        --focus-ring: 0 0 0 3px rgba(61, 18, 8, 0.12);
+        --control-h: 42px;
+      }
+
+      /* ── Body ── */
+      body {
+        background: var(--color-bg) !important;
+        color: var(--color-text) !important;
+        font-family: "Poppins", "Roboto", Arial, sans-serif !important;
+        font-size: 14px !important;
+        line-height: 1.5 !important;
+        -webkit-font-smoothing: antialiased;
+      }
+      body::before, body::after { display: none !important; }
+
+      /* ── Container ── */
+      .container {
+        width: min(100% - 32px, 1200px) !important;
+        padding: 24px 0 40px !important;
+      }
+
+      /* ── Page title ── */
+      .page-title {
+        display: block;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(22px, 4vw, 32px);
+        font-weight: 800;
+        color: var(--color-accent);
+        margin: 0 0 18px;
+        letter-spacing: -0.3px;
+        line-height: 1.15;
+        text-transform: none;
+      }
+      .app-topbar { display: none !important; }
+
+      /* ── Sticky Search Panel ── */
+      .sticky-search {
+        position: sticky !important;
+        top: 12px !important;
+        z-index: 1000 !important;
+        margin: 0 0 24px !important;
+        padding: 20px !important;
+        border: 1px solid var(--figma-border) !important;
+        border-radius: var(--radius-md) !important;
+        background: var(--color-card) !important;
+        box-shadow: var(--shadow-soft) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+      }
+      .sticky-search > div:first-child { display: none !important; }
+
+      /* ── Controls toolbar ── */
+      .controls-bar {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px 16px;
+      }
+      @media (min-width: 900px) {
+        .controls-bar {
+          flex-wrap: nowrap;
+        }
+        .search-bar-row {
+          flex: 1 1 auto;
+          min-width: 0;
+        }
+        .filter-inline {
+          flex: 0 0 auto;
+          margin-top: 0 !important;
+        }
+      }
+
+      /* ── Search row ── */
+      .search-bar-row {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 10px !important;
+      }
+      .search-bar {
+        position: relative !important;
+        flex: 1 1 0 !important;
+        max-width: none !important;
+      }
+      .search-bar::before {
+        content: "" !important;
+        position: absolute !important;
+        left: 17px; top: 50%;
+        z-index: 2;
+        width: 13px; height: 13px;
+        border: 2.5px solid var(--figma-muted) !important;
+        border-radius: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+      .search-bar::after {
+        content: "" !important;
+        position: absolute !important;
+        left: 29px; top: calc(50% + 6px);
+        z-index: 2;
+        width: 6px; height: 2.5px;
+        border-radius: 999px;
+        background: var(--figma-muted) !important;
+        transform: rotate(-45deg);
+        pointer-events: none;
+        opacity: 1 !important;
+      }
+      /* Reset the mobile phone :after pseudo from earlier */
+      .search-bar-row .search-bar::after { display: block !important; }
+
+      .search-bar input {
+        height: var(--control-h) !important;
+        padding: 0 16px 0 46px !important;
+        border: 1.5px solid var(--figma-border) !important;
+        border-radius: var(--radius-pill) !important;
+        background: var(--retro-search-bg) !important;
+        box-shadow: inset 0 1px 2px rgba(61, 18, 8, 0.05) !important;
+        color: var(--color-text) !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 500 !important;
+        line-height: var(--control-h) !important;
+        text-align: left !important;
+        box-sizing: border-box !important;
+      }
+      .search-bar input:focus {
+        border-color: var(--color-accent) !important;
+        box-shadow: var(--focus-ring) !important;
+        outline: none !important;
+        background: #fffdf8 !important;
+      }
+      .search-bar input::placeholder {
+        color: var(--figma-muted) !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 13px !important;
+        font-style: normal !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.2px !important;
+        text-transform: none !important;
+      }
+
+      /* ── Toggle View Btn ── */
+      .toggle-view-btn {
+        border: 1.5px solid var(--figma-border) !important;
+        border-radius: var(--radius-sm) !important;
+        background: var(--retro-search-bg) !important;
+        box-shadow: none !important;
+        flex: 0 0 var(--control-h) !important;
+        width: var(--control-h) !important;
+        height: var(--control-h) !important;
+        margin: 0 !important;
+      }
+      .toggle-view-btn svg rect {
+        fill: var(--color-accent) !important;
+        stroke: var(--color-bg) !important;
+      }
+      @media (hover:hover) and (pointer:fine) {
+        .toggle-view-btn:hover {
+          border-color: var(--color-accent) !important;
+          background: rgba(61,18,8,.08) !important;
+        }
+      }
+
+      /* ── Filter Dropdowns (restored) ── */
+      .filter-inline {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 10px 14px !important;
+        margin-top: 0 !important;
+        flex-wrap: wrap !important;
+        justify-content: flex-start !important;
+        width: 100%;
+      }
+      @media (min-width: 900px) {
+        .filter-inline {
+          width: auto !important;
+          justify-content: flex-end !important;
+        }
+      }
+      .filter-field {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+      }
+      .filter-inline label {
+        color: var(--figma-soft-text) !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 12px !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+        line-height: 1 !important;
+        margin: 0 !important;
+      }
+      .filter-inline select {
+        height: var(--control-h) !important;
+        min-height: var(--control-h) !important;
+        padding: 0 36px 0 16px !important;
+        border: 1.5px solid var(--figma-border) !important;
+        border-radius: var(--radius-pill) !important;
+        background-color: var(--retro-search-bg) !important;
+        background-image:
+          linear-gradient(45deg, transparent 50%, var(--figma-muted) 50%) right 18px center / 5px 5px no-repeat,
+          linear-gradient(135deg, var(--figma-muted) 50%, transparent 50%) right 14px center / 5px 5px no-repeat !important;
+        background-repeat: no-repeat !important;
+        color: var(--color-text) !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        line-height: var(--control-h) !important;
+        text-align: center !important;
+        text-align-last: center !important;
+        appearance: none !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        min-width: 120px !important;
+        cursor: pointer !important;
+        box-shadow: inset 0 1px 2px rgba(61, 18, 8, 0.04) !important;
+        outline: none !important;
+        box-sizing: border-box !important;
+        vertical-align: middle !important;
+      }
+      .filter-inline select:focus {
+        border-color: var(--color-accent) !important;
+        box-shadow: var(--focus-ring) !important;
+        background-color: #fffdf8 !important;
+      }
+      .filter-inline option {
+        background: #fdf5e6 !important;
+        color: var(--color-text) !important;
+      }
+
+      /* ── Filter Pills (hidden — using dropdowns instead) ── */
+      .filter-pills-row { display: none !important; }
+
+      /* ── Grid (max 5 cards per row on desktop) ── */
+      .grid:not(.list-view) {
+        display: grid !important;
+        grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+        gap: 20px !important;
+        margin-top: 0 !important;
+        align-items: stretch !important;
+      }
+      .grid.list-view {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        margin-top: 0 !important;
+      }
+      @media (min-width: 761px) and (max-width: 1024px) {
+        .grid:not(.list-view) {
+          grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+          gap: 18px !important;
+        }
+      }
+      @media (min-width: 461px) and (max-width: 760px) {
+        .grid:not(.list-view) {
+          grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          gap: 14px !important;
+        }
+      }
+
+      /* ── Game Card ── */
+      .game {
+        border: 1px solid var(--figma-border) !important;
+        border-radius: var(--radius-md) !important;
+        background: var(--color-card) !important;
+        box-shadow: var(--shadow-card) !important;
+        transition:
+          transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+          box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+          border-color 0.2s ease !important;
+        overflow: hidden !important;
+      }
+      .grid .game:not(.list-item) {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100% !important;
+      }
+      @media (hover:hover) and (pointer:fine) {
+        .game:hover, .game:focus {
+          background: var(--color-card-hover) !important;
+          border-color: var(--color-accent) !important;
+          box-shadow: 0 10px 32px rgba(61, 18, 8, 0.14) !important;
+          transform: translateY(-3px) !important;
+          margin: 0 !important;
+        }
+        .game.list-item:hover, .game.list-item:focus {
+          border-color: var(--color-accent) !important;
+          box-shadow: 0 8px 24px rgba(61, 18, 8, 0.12) !important;
+          transform: translateY(-2px) !important;
+        }
+        .toggle-view-btn:active,
+        .download-btn:active,
+        .pagination-btn:active,
+        .reload-btn:active {
+          transform: scale(0.98) !important;
+        }
+      }
+
+      /* ── Game Image ── */
+      .grid .game:not(.list-item) .game-image-container {
+        position: relative !important;
+        flex-shrink: 0 !important;
+        width: 100% !important;
+        aspect-ratio: 1 / 1 !important;
+        height: auto !important;
+        overflow: hidden !important;
+        background: #e8d5b0 !important;
+        border-radius: 14px 14px 0 0 !important;
+      }
+      .grid .game:not(.list-item) .game-image-container img {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+        aspect-ratio: auto !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        background: #e8d5b0 !important;
+        border-radius: 0 !important;
+        border-bottom: none !important;
+        image-rendering: auto !important;
+        display: block !important;
+      }
+      .game.list-item .game-image-container img,
+      .game.list-item img {
+        object-fit: cover !important;
+        background: #e8d5b0 !important;
+      }
+      .game-image-container { border-radius: 14px 14px 0 0 !important; }
+
+      /* ── Game Info ── */
+      .grid .game:not(.list-item) .game-info {
+        display: flex !important;
+        flex-direction: column !important;
+        flex: 1 1 auto !important;
+        align-items: center !important;
+        gap: 0 !important;
+        padding: 12px 14px 14px !important;
+        text-align: center !important;
+        background: var(--color-card) !important;
+        min-height: 128px !important;
+        box-sizing: border-box !important;
+      }
+      .game-info {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px !important;
+        padding: 12px 12px 14px !important;
+        text-align: left !important;
+        background: var(--color-card) !important;
+      }
+      .grid .game:not(.list-item) .game-info h3 {
+        color: var(--color-text) !important;
+        font-family: "Poppins",sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0 !important;
+        line-height: 1.35 !important;
+        text-shadow: none !important;
+        min-height: 2.7em !important;
+        max-height: 2.7em !important;
+        margin: 0 0 6px !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .game-info h3 {
+        color: var(--color-text) !important;
+        font-family: "Poppins",sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0 !important;
+        line-height: 20px !important;
+        text-shadow: none !important;
+        min-height: 40px !important;
+        max-height: 40px !important;
+        margin: 0 !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+
+      /* ── Card Actions ── */
+      .grid .game:not(.list-item) .card-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 8px !important;
+        width: 100% !important;
+        margin-top: auto !important;
+        padding: 4px 0 0 !important;
+        box-sizing: border-box !important;
+      }
+      .card-actions {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 6px !important;
+        width: 100% !important;
+        margin-top: 4px !important;
+      }
+
+      /* ── Platform Chip ── */
+      .platform-chip {
+        display: block !important;
+        color: var(--figma-soft-text) !important;
+        font-family: "Poppins",sans-serif !important;
+        font-size: 11px !important;
+        font-weight: 500 !important;
+        background: none !important;
+        border: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        letter-spacing: 0 !important;
+        line-height: 1.4 !important;
+        order: 1 !important;
+        width: 100% !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
+      .grid .game:not(.list-item) .platform-chip {
+        text-align: center !important;
+        white-space: normal !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        min-height: 2.8em !important;
+        line-height: 1.4 !important;
+      }
+
+      /* ── Download / Play Button ── */
+      .download-btn,
+      .game:hover .download-btn {
+        order: 2 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 38px !important;
+        padding: 0 14px !important;
+        border: none !important;
+        border-radius: 999px !important;
+        background: var(--color-accent) !important;
+        box-shadow: 0 2px 8px rgba(61,18,8,.25) !important;
+        color: #ffffff !important;
+        font-family: "Poppins",sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.8px !important;
+        line-height: 38px !important;
+        text-transform: uppercase !important;
+        text-align: center !important;
+        transform: none !important;
+        margin-top: 2px !important;
+        transition: background .15s, box-shadow .15s, transform .15s !important;
+      }
+      .grid .game:not(.list-item) .download-btn,
+      .grid .game:not(.list-item) .game:hover .download-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        margin-top: 2px !important;
+        box-sizing: border-box !important;
+        letter-spacing: 0.5px !important;
+      }
+      .grid .game:not(.list-item) .download-btn .download-text {
+        flex: 0 0 auto !important;
+        text-align: center !important;
+      }
+      .grid .game:not(.list-item) .download-btn .download-spinner {
+        flex: 0 0 auto !important;
+      }
+      .download-btn::before, .download-btn::after { display: none !important; }
+      @media (hover:hover) and (pointer:fine) {
+        .download-btn:hover, .game:hover .download-btn:hover {
+          background: var(--color-btn-hover) !important;
+          box-shadow: 0 4px 14px rgba(61,18,8,.35) !important;
+          transform: translateY(-1px) !important;
+        }
+      }
+      .download-btn.downloaded {
+        background: #4a7c59 !important;
+        box-shadow: 0 2px 8px rgba(74,124,89,.3) !important;
+        color: #fff !important;
+      }
+
+      /* ── Badges ── */
+      .game-image-container {
+        position: relative !important;
+      }
+      .popular-badge {
+        position: absolute !important;
+        top: 8px !important;
+        right: 8px !important;
+        left: auto !important;
+        border: 0 !important;
+        border-radius: 999px !important;
+        background: var(--color-accent) !important;
+        box-shadow: 0 2px 6px rgba(61,18,8,.3) !important;
+        color: #fff !important;
+        font-family: "Poppins",sans-serif !important;
+        font-size: 8px !important;
+        font-weight: 700 !important;
+        animation: none !important;
+        padding: 3px 7px !important;
+        letter-spacing: 0.4px !important;
+        text-transform: uppercase !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+      }
+      .downloaded-badge {
+        position: absolute !important;
+        top: auto !important;
+        bottom: 8px !important;
+        left: 8px !important;
+        right: auto !important;
+        border: 0 !important;
+        border-radius: 999px !important;
+        background: #4a7c59 !important;
+        box-shadow: 0 2px 6px rgba(74,124,89,.3) !important;
+        color: #fff !important;
+        font-family: "Poppins",sans-serif !important;
+        font-size: 8px !important;
+        font-weight: 700 !important;
+        animation: none !important;
+        padding: 3px 7px !important;
+        letter-spacing: 0.4px !important;
+        text-transform: uppercase !important;
+        z-index: 2 !important;
+        pointer-events: none !important;
+      }
+
+      /* ── Pagination ── */
+      .pagination-bar { padding: 24px 0 8px !important; }
+      .pagination-btn {
+        border: 1.5px solid var(--figma-border) !important;
+        border-radius: 999px !important;
+        background: var(--color-card) !important;
+        box-shadow: none !important;
+        color: var(--color-text) !important;
+        font-family: "Poppins",sans-serif !important;
+        font-weight: 600 !important;
+        transition: background .15s, border-color .15s, color .15s !important;
+      }
+      .pagination-btn.active, .pagination-btn:hover {
+        border-color: var(--color-accent) !important;
+        background: var(--color-accent) !important;
+        color: #fff !important;
+        box-shadow: 0 2px 10px rgba(61,18,8,.25) !important;
+      }
+
+      /* ── List view (larger cards for readability) ── */
+      .game.list-item {
+        display: flex !important;
+        min-height: 136px !important;
+        background: var(--color-card) !important;
+        border-radius: var(--radius-md) !important;
+      }
+      .game.list-item .game-image-container {
+        width: 136px !important;
+        height: 136px !important;
+        min-width: 136px !important;
+        flex-shrink: 0 !important;
+        border-radius: 14px 0 0 14px !important;
+        overflow: hidden !important;
+        background: #e8d5b0 !important;
+      }
+      .game.list-item .game-image-container img,
+      .game.list-item img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center center !important;
+        border-radius: 14px 0 0 14px !important;
+      }
+      .game.list-item .game-info {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) auto !important;
+        grid-template-rows: auto auto !important;
+        column-gap: 28px !important;
+        row-gap: 8px !important;
+        flex: 1 !important;
+        align-content: center !important;
+        align-items: center !important;
+        padding: 18px 24px !important;
+        text-align: left !important;
+        background: var(--color-card) !important;
+        min-width: 0 !important;
+      }
+      .game.list-item .game-info h3 {
+        grid-column: 1;
+        grid-row: 1;
+        min-height: auto !important;
+        max-height: none !important;
+        font-size: 16px !important;
+        font-weight: 700 !important;
+        line-height: 1.35 !important;
+        color: var(--color-text) !important;
+        text-align: left !important;
+        display: -webkit-box !important;
+        -webkit-line-clamp: 2 !important;
+        line-clamp: 2 !important;
+        -webkit-box-orient: vertical !important;
+        overflow: hidden !important;
+      }
+      .game.list-item .card-actions { display: contents !important; }
+      .game.list-item .platform-chip {
+        grid-column: 1;
+        grid-row: 2;
+        justify-self: start !important;
+        font-size: 12px !important;
+        white-space: normal !important;
+        text-overflow: unset !important;
+        overflow: visible !important;
+        line-height: 1.4 !important;
+      }
+      .game.list-item .download-btn,
+      .game.list-item:hover .download-btn {
+        grid-column: 2 !important;
+        grid-row: 1 / 3 !important;
+        justify-self: end !important;
+        align-self: center !important;
+        width: 132px !important;
+        max-width: 132px !important;
+        min-width: 132px !important;
+        height: 42px !important;
+        line-height: 42px !important;
+        font-size: 13px !important;
+        margin-top: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+
+      /* ── Loading overlay ── */
+      #loading-overlay {
+        background: var(--color-bg) !important;
+      }
+      .pixel-spinner div { background: var(--color-accent) !important; border-radius: 2px !important; }
+      .loading-text {
+        color: var(--figma-soft-text) !important;
+        font-family: "Poppins", sans-serif !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.1px !important;
+      }
+      .reload-btn {
+        background: var(--color-accent) !important;
+        color: #fff !important;
+        border: none !important;
+        border-radius: var(--radius-pill) !important;
+        font-family: "Poppins", sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 14px !important;
+        padding: 12px 22px !important;
+        box-shadow: 0 2px 10px rgba(61, 18, 8, 0.22) !important;
+        cursor: pointer !important;
+      }
+      @media (hover: hover) and (pointer: fine) {
+        .reload-btn:hover {
+          background: var(--color-btn-hover) !important;
+          box-shadow: 0 4px 14px rgba(61, 18, 8, 0.28) !important;
+        }
+      }
+
+      /* ── Mobile responsive ── */
+      @media (max-width: 760px) {
+        body { background: var(--color-bg) !important; }
+        .controls-bar {
+          flex-direction: column !important;
+          align-items: stretch !important;
+        }
+        .filter-inline {
+          width: 100% !important;
+          justify-content: flex-start !important;
+        }
+        .grid:not(.list-view) {
+          grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          gap: 12px !important;
+        }
+        .grid.list-view {
+          gap: 16px !important;
+        }
+        .sticky-search { position: sticky !important; top: 0 !important; }
+        .search-bar input { height: 44px !important; font-size: 13px !important; }
+        .toggle-view-btn { flex: 0 0 40px !important; width: 40px !important; height: 40px !important; }
+        .filter-inline { gap: 8px !important; }
+        .sticky-search {
+          top: 8px !important;
+          padding: 16px !important;
+          border-radius: 14px !important;
+        }
+        .filter-inline select {
+          min-width: 100px !important;
+          font-size: 12px !important;
+          height: 38px !important;
+          min-height: 38px !important;
+          line-height: 38px !important;
+          padding: 0 32px 0 14px !important;
+          text-align: center !important;
+          text-align-last: center !important;
+        }
+        .grid .game:not(.list-item) .game-info {
+          min-height: 108px !important;
+          padding: 10px 10px 12px !important;
+          align-items: center !important;
+          text-align: center !important;
+        }
+        .grid .game:not(.list-item) .game-info h3 {
+          min-height: 2.6em !important;
+          max-height: 2.6em !important;
+          font-size: 11px !important;
+          margin-bottom: 4px !important;
+          text-align: center !important;
+        }
+        .grid .game:not(.list-item) .card-actions {
+          margin-top: auto !important;
+          gap: 6px !important;
+          align-items: center !important;
+          padding: 4px 0 0 !important;
+        }
+        .grid .game:not(.list-item) .download-btn,
+        .grid .game:not(.list-item) .game:hover .download-btn {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          background: var(--color-accent) !important;
+          line-height: 1 !important;
+        }
+        .game.list-item {
+          min-height: 112px !important;
+        }
+        .game.list-item .game-image-container {
+          width: 112px !important;
+          height: 112px !important;
+          min-width: 112px !important;
+        }
+        .game.list-item .game-info {
+          padding: 14px 16px !important;
+          column-gap: 16px !important;
+        }
+        .game.list-item .game-info h3 {
+          font-size: 14px !important;
+        }
+        .game.list-item .platform-chip {
+          font-size: 11px !important;
+        }
+        .game.list-item .download-btn,
+        .game.list-item:hover .download-btn {
+          width: 120px !important;
+          min-width: 120px !important;
+          max-width: 120px !important;
+          height: 36px !important;
+          line-height: 36px !important;
+          font-size: 12px !important;
+        }
+      }
+      @media (max-width: 460px) {
+        .grid { gap: 8px !important; }
+        .container { width: min(100% - 16px, 1200px) !important; }
+        .filter-inline { gap: 6px !important; }
+        .filter-inline select {
+          min-width: 88px !important;
+          font-size: 11px !important;
+          height: 36px !important;
+          min-height: 36px !important;
+          line-height: 36px !important;
+          padding: 0 28px 0 12px !important;
+        }
+        .search-bar input {
+          height: 40px !important;
+          line-height: 40px !important;
+        }
+        .toggle-view-btn {
+          width: 40px !important;
+          height: 40px !important;
+          flex: 0 0 40px !important;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .game,
+        .download-btn,
+        .toggle-view-btn,
+        .pagination-btn,
+        .reload-btn {
+          transition: none !important;
+        }
+      }
+
+      /* ── Empty state ── */
+      .empty-state {
+        grid-column: 1 / -1;
+        padding: 48px 24px;
+        text-align: center;
+        color: var(--figma-soft-text);
+        font-family: "Poppins", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.5;
+        background: var(--color-card);
+        border: 1px dashed var(--figma-border);
+        border-radius: var(--radius-md);
       }
     </style>
   </head>
@@ -2640,19 +3544,19 @@
           <div></div>
         </div>
         <div class="loading-text">Loading games...</div>
-        <button class="reload-btn" onclick="reloadPage()">🔄 Reload Page</button>
+        <button class="reload-btn" onclick="reloadPage()">Reload page</button>
       </div>
     </div>
 
     <div class="container">
-      <!-- <header class="app-topbar" aria-label="App header">
-        <h1 class="app-title">GBA Game Library</h1>
-      </header> -->
       <div class="sticky-search">
         <div></div>
-        <div class="search-bar-row">
-          <div class="search-bar">
-            <input type="text" id="search-input" placeholder="Search for games..." oninput="searchGames()" />
+        <h1 class="page-title">All Download</h1>
+        <div class="controls-bar">
+          <div class="search-bar-row">
+            <div class="search-bar">
+              <input type="text" id="search-input" placeholder="Search game" oninput="searchGames()" />
+            </div>
             <button
               id="toggle-view-btn"
               class="toggle-view-btn"
@@ -2661,20 +3565,21 @@
               aria-label="Toggle View"
             >
               <span class="icon-grid active"
-                ><svg id="icon-grid" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="2" y="2" width="6" height="6" fill="#ff36d0" stroke="#0a0442" stroke-width="2" />
-                  <rect x="12" y="2" width="6" height="6" fill="#ff36d0" stroke="#0a0442" stroke-width="2" />
-                  <rect x="2" y="12" width="6" height="6" fill="#ff36d0" stroke="#0a0442" stroke-width="2" />
-                  <rect x="12" y="12" width="6" height="6" fill="#ff36d0" stroke="#0a0442" stroke-width="2" /></svg
+                ><svg id="icon-grid" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="2" width="7" height="7" fill="#3d1208" rx="1.5" />
+                  <rect x="11" y="2" width="7" height="7" fill="#3d1208" rx="1.5" />
+                  <rect x="2" y="11" width="7" height="7" fill="#3d1208" rx="1.5" />
+                  <rect x="11" y="11" width="7" height="7" fill="#3d1208" rx="1.5" /></svg
               ></span>
               <span class="icon-list"
-                ><svg id="icon-list" width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <rect x="2" y="3" width="16" height="3" fill="#ff36d0" stroke="#0a0442" stroke-width="2" />
-                  <rect x="2" y="9" width="16" height="3" fill="#ff36d0" stroke="#0a0442" stroke-width="2" />
-                  <rect x="2" y="15" width="16" height="3" fill="#ff36d0" stroke="#0a0442" stroke-width="2" /></svg
+                ><svg id="icon-list" width="18" height="18" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="3" width="16" height="3" fill="#3d1208" rx="1.5" />
+                  <rect x="2" y="9" width="16" height="3" fill="#3d1208" rx="1.5" />
+                  <rect x="2" y="15" width="16" height="3" fill="#3d1208" rx="1.5" /></svg
               ></span>
             </button>
           </div>
+
           <div class="filter-inline">
             <div class="filter-field">
               <label for="platform-filter">Platform</label>
@@ -2690,6 +3595,9 @@
             </div>
           </div>
         </div>
+
+        <!-- Platform filter pills (populated by JS) -->
+        <div id="filter-pills" class="filter-pills-row"></div>
       </div>
 
       <div class="grid" id="game-list"></div>
